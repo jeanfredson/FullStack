@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="margin-top: 10px;">
   <div class="card">
     <div class="card-header text-center">
       <div class="card-title">
@@ -6,31 +6,50 @@
       </div>
     </div>
     <div class="card-body">
-
-      <div class="col-md-6">
+      <div class="col-md-6" style="margin-left: 25%;">
         <div class="card">
-          <div class="card-header">
-            <button class="btn btn-primary">Salvar</button>
-            <button class="btn btn-success">Editar</button>
-            <button class="btn btn-default">Padrao</button>
+          <div class="card-header text-center">
+            Informações
           </div>
           <div class="card-body">
-            <form class="form-horizontal">
+            <form class="form-horizontal" [formGroup]="form" (ngSubmit)="createForm()">
               <div class="form-group">
                 <label for="nome">Nome</label>
-                <input type="text" class="form-control" placeholder="Seu Nome" id="nome" name="nome">
+                <input type="text" class="form-control" placeholder="Seu Nome" id="nome" formControlName="nome">
               </div>
               <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="text" class="form-control" placeholder="Seu email@gmail.com" id="email" name="email">
-                </div>
-                <input type="text" class="btn btn-primary" value="Cadastrar">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" placeholder="Seu email@gmail.com" id="email" formControlName="email">
+              </div>
+              <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="text" class="form-control" placeholder="(11) 91111-1111" formControlName="telefone" id="telefone">
+              </div>
+              <input type="submit" class="btn btn-primary col-md-3" value="Cadastrar">
             </form>
           </div>
         </div>
       </div>
-
-
     </div>
+    <table class="table table-hover table-striped table-bordered table-dark">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Opções</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let list of lista">
+            <td>{{list.id}}</td>
+            <td>{{list.nome}}</td>
+            <td>{{list.email}}</td>
+            <td>{{list.telefone}}</td>
+            <td>opções</td>
+          </tr>
+        </tbody>
+      </table>
   </div>
 </div>

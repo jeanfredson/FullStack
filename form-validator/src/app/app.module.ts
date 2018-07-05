@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServiceService } from './shared/service.service';
 
 import { AppComponent } from './app.component';
@@ -19,7 +20,9 @@ import { ListaCadastroComponent } from './componente/lista-cadastro/lista-cadast
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [ ServiceService ],
   bootstrap: [AppComponent]
