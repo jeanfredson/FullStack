@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="card-header text-center">
+    <span class="text-success">
+      Tabela de Usuários
+    </span>
+  </div>
+  <div class="card-body">
+    <table class="table table-striped table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Index</th>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th>Senha</th>
+          <th>Idade</th>
+          <th>Telefone</th>
+          <th>Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of user, let i = index">
+         <td class="text-center col-md-0">{{i}}</td>
+         <td>{{ user.id }}</td>
+         <td class="text-lefth">{{user.nome}}</td>
+         <td>{{user.email}}</td>
+         <td>{{user.senha}}</td>
+         <td>{{user.idade}}</td>
+         <td>{{user.telefone}}</td>
+
+          <td class="text-center">
+            <button class="btn btn-primary" (click)="update(user)">
+              <i class="fas fa-pencil-alt"></i>
+            </button>
+            <button class="btn btn-danger" (click)="delete(user.id)">
+              <i class="fas fa-trash"></i>
+            </button>
+            <button class="btn btn-success">
+              <i class="far fa-plus-square"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

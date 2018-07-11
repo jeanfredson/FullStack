@@ -1,0 +1,57 @@
+
+  <div class="card">
+    <div class="card-header text-center">
+      <span class="text-primary">Formulário de cadastro</span>
+    </div>
+    <div class="card-body">
+      <form class="form-horizontal row" [formGroup]="formulario" (ngSubmit)="create()">
+        <div class="form-group col-md-12 col-sm-12">
+          <div class="alert alert-success" *ngIf="flag">
+            Usuário cadastrado com sucesso
+          </div>
+        </div>
+
+        <div class="form-group col-md-12 col-sm-12">
+          <label for="nome">Nome</label>
+          <input type="text" class="form-control" name="nome" formControlName="nome" id="nome" autocomplete="nome" placeholder="Seu Nome">
+          <div class="alert alert-danger" *ngIf="userErro?.nome">
+            {{ userErro.nome }}
+          </div>
+        </div>
+        <div class="form-group col-md-12 col-sm-12">
+          <label for="email">E-mail</label>
+          <input type="text" class="form-control" formControlName="email" id="email" autocomplete="email" placeholder="Email@gmail.com">
+          <div class="alert alert-danger" *ngIf="userErro?.email">
+            {{userErro.email}}
+          </div>
+        </div>
+        <div class="form-group col-md-3 col-sm-12">
+          <label for="senha">Senha</label>
+          <input type="password" class="form-control" autocomplete="senha" formControlName="senha" id="senha" placeholder="Minimo de 6 e Maximo de  8">
+          <div class="alert alert-danger" *ngIf="userErro?.senha">
+            {{userErro.senha}}
+          </div>
+        </div>
+        <div class="form-group col-md-3 col-sm-12">
+          <label for="idade">Idade</label>
+          <input type="text" class="form-control" formControlName="idade" id="idade" placeholder="Sua Idade">
+          <div class="alert alert-danger" *ngIf="userErro?.idade">
+            {{userErro.idade}}
+          </div>
+        </div>
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="telefone">Idade</label>
+          <input type="text" class="form-control" formControlName="telefone" autocomplete="telefone" id="telefone" placeholder="(XX) 9XXXX-XXXX">
+          <div class="alert alert-danger" *ngIf="userErro?.telefone">
+            {{userErro.telefone}}
+          </div>
+        </div>
+        <div class="form-group col-md-12 col-sm-12">
+          <button class="btn btn-success" type="submit">Enviar</button>
+          <button class="btn btn-default" (click)="clear()">Cancelar</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
