@@ -1,0 +1,67 @@
+<div class="card">
+  <div class="card-header text-center">
+    <span class="text-danger">Ir ao Evento</span>
+  </div>
+  <div class="card-body">
+    <form class="form-horizontal row" #f="ngForm" (ngSubmit)="submit(f)">
+      <div class="form-group col-md-12 col-sm-12">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" name="nome" id="nome" placeholder="Seu Nome"
+        autocomplete="nome" required #nome="ngModel" ngModel>
+        <div class="alert alert-danger" *ngIf="!nome.valid && nome.touched">
+          Nome Obrigatório
+        </div>
+      </div>
+      <div class="form-group col-md-6 col-sm-12">
+        <label for="cpf">CPF</label>
+        <input type="text" class="form-control" name="cpf" id="cpf" placeholder="Seu CPF"
+        autocomplete="cpf" required #cpf="ngModel" ngModel>
+      </div>
+      <div class="form-group col-md-6 col-sm-12">
+        <label for="email">email</label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="Seu.email@gmail.com"
+        autocomplete="email" required #email="ngModel" ngModel>
+      </div>
+
+      <div class="form-group col-md-2 col-sm-12">
+        <label for="cep">CEP</label>
+        <input type="text" class="form-control" name="cep" id="cep" placeholder="Seu CEP 0000-000"
+        autocomplete="cep" required #cep="ngModel" ngModel (blur)="populandoCEP($event.target.value, f)">
+      </div>
+      <div class="form-group col-md-4 col-sm-12">
+          <label for="rua">Rua</label>
+          <input type="text" class="form-control" name="rua" id="rua" placeholder="Rua Av. Estada"
+          autocomplete="rua" required #rua="ngModel" ngModel>
+        </div>
+      <div class="form-group col-md-2 col-sm-12">
+        <label for="numero">Número</label>
+        <input type="text" class="form-control" name="numero" id="numero" placeholder="1.0002"
+        autocomplete="numero" required #numero="ngModel" ngModel>
+      </div>
+      <div class="form-group col-md-4 col-sm-12">
+        <label for="complemento">complemento</label>
+        <input type="text" class="form-control" name="complemento" id="complemento" placeholder="Próximo da Igreja"
+        autocomplete="complemento" required #complemento="ngModel" ngModel>
+      </div>
+
+      <div class="form-group col-md-5 col-sm-12">
+        <label for="bairro">Bairro</label>
+        <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Ex: Jardins"
+        autocomplete="bairro" required #bairro="ngModel" ngModel>
+      </div>
+      <div class="form-group col-md-5 col-sm-12">
+        <label for="cidade">cidade</label>
+        <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Ex: Osasco"
+        autocomplete="cidade" required #cidade="ngModel" ngModel>
+      </div>
+      <div class="form-group col-md-2 col-sm-12">
+        <label for="estado">estado</label>
+        <input type="text" class="form-control" name="estado" id="estado" placeholder="Ex: SP"
+        autocomplete="estado" required #estado="ngModel" ngModel>
+      </div>
+      <div class="form-group col-md-12 col-sm-12">
+      <button class="btn btn-primary" type="submit" [disabled]="!f">Salvar</button>
+    </div>
+    </form>
+  </div>
+</div>
