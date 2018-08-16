@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<a th:href=@{/index/lista}>Lista</a>
+<form method="post">
+NOME: <input type="text"  name="nome" placeholder="Nome"/>
+LOCAL: <input type="text"  name="local" placeholder="LOCAL" />
+DATA: <input type="date" name="data"/>
+HORARIO: <input type="text" name="horario"/>
+<button type="submit">SEND</button>
+
+</form>
+</body>
+</html>
