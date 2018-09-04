@@ -20,10 +20,11 @@ import org.hibernate.validator.constraints.Length;
 @Table(name="tbl_pais")
 public class Pais implements Serializable{
 
-	
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	@SequenceGenerator(name="seq_pais", sequenceName="seq_pais_id", allocationSize=1)
-	@GeneratedValue(generator="seq_pais", strategy=GenerationType.SEQUENCE)
+	@SequenceGenerator(allocationSize=1, name="id", sequenceName="id_pais")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="id")
 	private Integer id;
 	
 	@Length(max=50, min=2, message="O Nome não pode ter mais que {max} ou menos que {min} caracteres ...")
@@ -98,6 +99,7 @@ public class Pais implements Serializable{
 		this.iso = iso;
 	}
 	
+
 	
 
 }
