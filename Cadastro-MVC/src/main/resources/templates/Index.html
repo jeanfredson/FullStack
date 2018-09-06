@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form method="post">
+
+Nome: <input type="text" name="nome" id="nome" placeholder="Seu nome" value=""/>
+Sobre Nome: <input type="text" name="snome" id="snome" placeholder="Seu sobre nome" value=""/>
+Data: <input type="datetime" name="data" id="data" value=""/>
+
+<input type="submit" value="Send" >
+</form>
+
+<table style="border: 1px solid #CCC; margin: 10px;">
+	<thead>
+	<tr>
+	<th>#</th>
+	<th>Nome</th>
+	<th>Sobre Nome</th>
+	<th>Data de Nascimento</th>
+	<th>Opções</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr th:each="lista : ${users}">
+		<td th:text="${lista.id}"></td>
+		<td th:text="${lista.nome}"></td>
+		<td th:text="${lista.snome}"></td>
+		<td th:text="${lista.data}"></td>
+		<td>
+		<a th:href="${(#mvc.url('UC#deletaUsuario').arg(0, lista.id)).build()}">Excluir</a>
+		</td>
+	</tr>
+	</tbody>
+</table>
+
+</body>
+</html>
