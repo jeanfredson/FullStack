@@ -1,0 +1,15 @@
+.card {
+	margin: 5% 0 0 0;
+}
+.form-group {
+	margin: 3px 0 0 0;
+}
+.navegacao {
+	float: right;
+	list-style-type: none;	
+	
+}
+
+a:hover {
+	text-decoration: none;
+}
